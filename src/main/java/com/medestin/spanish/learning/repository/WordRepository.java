@@ -21,7 +21,10 @@ public class WordRepository {
     }
 
     public Mono<Word> readbyValue(String value) {
+        Criteria valueCriteria = Criteria.where("value").is(value);
+        Criteria conjugationCriteria = Criteria.where("conjugations").elemMatch(Criteria.where("value").is(value));
+        Criteria finalCriteria = new Criteria().orOperator(valueCriteria, conjugationCriteria);
         return mongoTemplate.findOne(
-                new Query().addCriteria(Criteria.where("value").is(value)), Word.class);
+                new Query().addCriteria(finalCriteria), Word.class);
     }
 }
