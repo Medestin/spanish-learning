@@ -18,7 +18,7 @@ public class WordController {
         return repository.save(word);
     }
 
-    @GetMapping()
+    @GetMapping
     public Mono<Word> getByValue(@RequestParam("value") String value) {
         return repository.readbyValue(value);
     }
