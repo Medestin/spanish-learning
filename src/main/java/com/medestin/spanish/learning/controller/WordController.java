@@ -4,6 +4,7 @@ import com.medestin.spanish.learning.model.Word;
 import com.medestin.spanish.learning.repository.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -16,6 +17,11 @@ public class WordController {
     @PostMapping
     public Mono<Word> insert(@RequestBody Word word) {
         return repository.save(word);
+    }
+
+    @GetMapping("/")
+    public Flux<Word> getWords() {
+        return repository.readAll();
     }
 
     @GetMapping

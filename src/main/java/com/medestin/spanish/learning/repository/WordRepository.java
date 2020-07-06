@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Repository
@@ -18,6 +19,10 @@ public class WordRepository {
 
     public Mono<Word> save(Word word) {
         return mongoTemplate.save(word);
+    }
+
+    public Flux<Word> readAll() {
+        return mongoTemplate.findAll(Word.class);
     }
 
     public Mono<Word> readByValue(String value) {
