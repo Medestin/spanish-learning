@@ -20,6 +20,6 @@ public class WordController {
 
     @GetMapping
     public Mono<Word> getByValue(@RequestParam("value") String value) {
-        return repository.readbyValue(value);
+        return repository.readByValue(value);
     }
 }

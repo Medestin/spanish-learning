@@ -20,7 +20,7 @@ public class WordRepository {
         return mongoTemplate.save(word);
     }
 
-    public Mono<Word> readbyValue(String value) {
+    public Mono<Word> readByValue(String value) {
         Criteria valueCriteria = Criteria.where("value").is(value);
         Criteria conjugationCriteria = Criteria.where("conjugations").elemMatch(Criteria.where("value").is(value));
         Criteria finalCriteria = new Criteria().orOperator(valueCriteria, conjugationCriteria);
