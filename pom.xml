@@ -71,6 +71,7 @@
                 <version>0.8.5</version>
                 <configuration>
                     <excludes>
+                        <!-- exclusions added here must be repeated in Jenkins project configuration -->
                         <exclude>**/*Application.*</exclude>
                         <exclude>**/*Config.*</exclude>
                         <exclude>**/learning/model/**</exclude>
@@ -82,18 +83,6 @@
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
-                    </execution>
-                    <execution>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <configuration>
-                            <excludes>
-                                <exclude>**/*Application.*</exclude>
-                                <exclude>**/*Config.*</exclude>
-                                <exclude>**/learning/model/**</exclude>
-                            </excludes>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
