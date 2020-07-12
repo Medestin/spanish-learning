@@ -1,4 +1,4 @@
-package com.medestin.spanish.learning;
+package com.medestin.spanish.learning.service;
 
 import com.medestin.spanish.learning.model.Word;
 import com.medestin.spanish.learning.model.WordType;

@@ -1,6 +1,6 @@
 package com.medestin.spanish.learning.controller;
 
-import com.medestin.spanish.learning.WordService;
+import com.medestin.spanish.learning.service.WordService;
 import com.medestin.spanish.learning.model.Word;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
